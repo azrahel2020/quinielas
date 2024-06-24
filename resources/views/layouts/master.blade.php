@@ -32,7 +32,7 @@
                     <div class="navigation">
                         <ul>
                             <li class="list active">
-                                <a>
+                                <a href="{{ route('usuarios.bets.quinielas') }}">
                                     <span class="icon"><i class="fa-solid fa-house"></i></span>
                                     <span class="text">Home</span>
                                 </a>
@@ -157,7 +157,7 @@
                                 <i class="fa-solid fa-heart"></i>
                                 <div class="menu-icons__badge">3</div>
                             </a>
-                            <div class="wishlist">
+                           {{--  <div class="wishlist">
                                 <div class="wishlist__detalles">
                                     <div class="wishlist__info">
                                         <div class="wishlist__img">
@@ -181,14 +181,14 @@
                                     </div>
                                 </div>
                                 <div class="wishlist__boton">Tus Deseos</div>
-                            </div>
+                            </div> --}}
                         </li>
                         <li class="menu-icons__li menu-icons__li--cart">
                             <a>
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <div class="menu-icons__badge">3</div>
                             </a>
-                            <div class="cart-menu">
+                            {{-- <div class="cart-menu">
                                 <div class="cart-menu__detalles">
                                     <div class="cart-menu__info">
                                         <div class="cart-menu__img">
@@ -223,7 +223,7 @@
                                 </div>
                                 <div class="cart-menu__total">Total: $5.000</div>
                                 <div class="cart-menu__btn">Checkout</div>
-                            </div>
+                            </div> --}}
                         </li>
                     </ul>
                 </div>

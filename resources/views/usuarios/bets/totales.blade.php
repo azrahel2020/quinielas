@@ -1,15 +1,50 @@
-<h1>Total de Puntos Acumulados en Juegos</h1>
+@extends('layouts.master')
 
-    @foreach ($games as $game)
-        <h2>Juego ID: {{ $game->id }}</h2>
-        <ul>
-            @foreach ($game->bets as $bet)
-                <li>
-                    Usuario ID: {{ $bet->user_id }} - Puntos: {{ $bet->points }}
-                </li>
+@section('title', 'Quinielas')
+
+@section('content')
+    @if(session('success'))
+    <p>{{ session('success') }}</p>
+    @endif
+
+    <table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($userTotals as $userTotal)
+            <tr>
+                <td>{{ $userTotal['user']->name }}</td>
+                <td>{{ $userTotal['total_final'] }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+    </table>
+
+@endsection
+{{-- 
+<h1>Totales Finales por Usuario</h1>
+
+    @if(session('success'))
+        <p>{{ session('success') }}</p>
+    @endif
+
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Total Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($userTotals as $userTotal)
+                <tr>
+                    <td>{{ $userTotal['user']->name }}</td>
+                    <td>{{ $userTotal['total_final'] }}</td>
+                </tr>
             @endforeach
-        </ul>
-    @endforeach
-
-    <h2>Total de Puntos Acumulados en Todos los Juegos:</h2>
-    <p>{{ $totalPoints }}</p>
+        </tbody>
+    </table> --}}

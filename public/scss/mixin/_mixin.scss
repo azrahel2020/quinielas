@@ -1,0 +1,61 @@
+//grid-areas
+@mixin grid-area($area) {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-area: $area;
+
+}
+
+//display-grid
+@mixin d-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+
+// media query default
+@mixin default {
+    @media (width<=0px) { 
+        @content; 
+    }
+}
+
+
+// media query mobile
+@mixin movil {
+    @media (width>=500px) { 
+        @content; 
+    }
+}
+
+// media query tablet
+@mixin tablet {
+    @media (width>=768px) { 
+        @content; 
+    }
+}
+
+// media query pc-old
+@mixin pc-old {
+    @media (width>=992px) { 
+        @content; 
+    }
+}
+
+// media query pc
+@mixin pc {
+    @media (width>=1200px) { 
+        @content; 
+    }
+}
+
+// media query tv
+@mixin tv {
+    @media (width>=1400px) { 
+        @content; 
+    }
+}
+
+

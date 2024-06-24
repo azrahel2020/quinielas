@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
        $this->call(TeamSeeder::class);
         $this->call(QuinielaSeeder::class);
         $this->call(GameSeeder::class); 
-        /* $this->call(ResultSeeder::class); */
+        /* $this->call(ResultSeeder::class);  */
         $this->call(UserSeeder::class);
-        $this->call(BetSeeder::class); 
+        /* $this->call(BetSeeder::class); */
         
         // \App\Models\User::factory(10)->create();
 

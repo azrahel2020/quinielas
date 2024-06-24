@@ -111,34 +111,9 @@ class BetController extends Controller
         return redirect()->route('admin.bets.index')->with('success', 'Apuesta eliminada exitosamente.');
     }
 
+    
 
 
-   /*  public function showBetForm()
-    {
-        $quinielas = Quiniela::with('games')->get();
 
-        return view('bets.create', compact('quinielas'));
-    } */
-
-    /* public function storeBetsForQuinielas(Request $request)
-    {
-        $user = Auth::user();
-        $quinielas = Quiniela::all();
-        $bets = [];
-
-        foreach ($quinielas as $quiniela) {
-            foreach ($quiniela->games as $game) {
-                $bet = Bet::create([
-                    'user_id' => $user->id,
-                    'game_id' => $game->id,
-                    'bets_home' => $request->input('bets_home')[$game->id] ?? 0,
-                    'bets_away' => $request->input('bets_away')[$game->id] ?? 0,
-                    'points' => 0 // o algún cálculo que necesites
-                ]);
-                $bets[] = $bet;
-            }
-        }
-
-        return view('bets', ['bets' => $bets]);
-    } */
+   
 }

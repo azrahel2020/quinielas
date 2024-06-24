@@ -29,38 +29,6 @@ class ResultSeeder extends Seeder
             
 
         ]);
-        Result::create([
-
-            'game_id' => 3,
-            'result_home' => 1,
-            'result_away' => 0,
-            
-
-        ]);
-
-        Result::create([
-
-            'game_id' => 4,
-            'result_home' => 0,
-            'result_away' => 0,
-            
-
-        ]);
-        Result::create([
-
-            'game_id' => 5,
-            'result_home' => 2,
-            'result_away' => 0,
-            
-
-        ]);
-        Result::create([
-
-            'game_id' => 6,
-            'result_home' => 1,
-            'result_away' => 0,
-            
-
-        ]);
+        
     }
 }

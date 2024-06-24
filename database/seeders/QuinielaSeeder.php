@@ -15,39 +15,22 @@ class QuinielaSeeder extends Seeder
     {
         Quiniela::create([
 
-            'name' => 'copa america',
-            'inicio' => '2024-06-20',
-            'final' => '2024-06-20',
-            'image' => 'default.png',
+            'name' => 'Copa America',
+            'inicio' => '2024-06-24',
+            'final' => '2024-06-25',
+            'image' => 'copa america.jpg',
             'status' => 'Activa',
 
         ]);
         Quiniela::create([
 
-            'name' => 'liga española',
-            'inicio' => '2024-06-20',
-            'final' => '2024-06-20',
-            'image' => 'default.png',
+            'name' => 'Eurocopa',
+            'inicio' => '2024-06-24',
+            'final' => '2024-06-25',
+            'image' => 'Eurocopa.jpg',
             'status' => 'Activa',
 
         ]);
-        Quiniela::create([
-
-            'name' => 'liga francesa',
-            'inicio' => '2024-06-20',
-            'final' => '2024-06-20',
-            'image' => 'default.png',
-            'status' => 'Activa',
-
-        ]);
-        Quiniela::create([
-
-            'name' => ' mundial',
-            'inicio' => '2024-06-20',
-            'final' => '2024-06-20',
-            'image' => 'default.png',
-            'status' => 'Activa',
-
-        ]);
+        
     }
 }

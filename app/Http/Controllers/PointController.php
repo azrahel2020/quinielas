@@ -155,7 +155,7 @@ class PointController extends Controller
         $this->altaBaja($quinielaId);
         $this->total($quinielaId);
 
-        return redirect()->route('usuarios.bets.index', $quinielaId)
+        return redirect()->route('usuarios.bets.apuestas', $quinielaId)
                          ->with('success', 'All points calculated successfully.');
     }
 
@@ -190,6 +190,42 @@ class PointController extends Controller
         // Aquí puedes pasar $games y $totalPoints a la vista para mostrar la información
 
         return view('usuarios.bets.totales', compact('games', 'totalPoints'));
+    }
+
+    public function updateTotalFinal($quinielaId)
+    {
+        // Obtener todas las apuestas de la quiniela específica
+        $bets = Bet::whereHas('game', function ($query) use ($quinielaId) {
+            $query->where('quiniela_id', $quinielaId);
+        })->with('user')->get();
+
+        // Inicializar un array para almacenar los totales finales por usuario
+        $userTotals = [];
+
+        // Calcular la suma de todos los totales de cada juego para cada usuario
+        foreach ($bets as $bet) {
+            if (!isset($userTotals[$bet->user_id])) {
+                $userTotals[$bet->user_id] = [
+                    'user' => $bet->user,
+                    'total_final' => 0
+                ];
+            }
+            $userTotals[$bet->user_id]['total_final'] += $bet->total;
+        }
+
+        // Actualizar el campo total_final en cada apuesta
+        foreach ($bets as $bet) {
+            $bet->total_final = $userTotals[$bet->user_id]['total_final'];
+            $bet->save();
+        }
+
+        // Ordenar los totales finales de mayor a menor
+        usort($userTotals, function ($a, $b) {
+            return $b['total_final'] - $a['total_final'];
+        });
+
+        // Pasar los totales finales a la vista
+        return view('usuarios.bets.totales', ['userTotals' => $userTotals]);
     }
 
     

@@ -1,0 +1,7 @@
+.footer {
+    @include grid-area(footer);
+    background: $color-primario;
+    width: 100%;
+
+
+}

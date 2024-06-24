@@ -18,6 +18,7 @@ class Bet extends Model
         'pointsAway',
         'pointsAltaBaja',
         'total',
+        'total_final',
         
     ];
 

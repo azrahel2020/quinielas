@@ -1,0 +1,14 @@
+.container-grid {
+    display: grid;
+    grid-template-areas: 'header'
+                        'contenido'
+                        'footer'
+                         ;
+    overflow: hidden;
+    gap: 0px;
+    grid-template-rows: 70px 87.5vh 30px;
+    grid-template-columns: 1fr;
+    font-size: 14px;
+    
+  
+}

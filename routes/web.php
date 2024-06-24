@@ -64,30 +64,31 @@ Route::group(['middleware' => ['auth','admin']], function () {
     // Ruta apuestas
     Route::get('/admin/quinielas/{quinielaId}/bets', [BetController::class, 'index'])->name('admin.bets.index');
     Route::post('/admin/quinielas/{quinielaId}/bets', [BetController::class, 'store'])->name('admin.bets.store');
+
     /* Route::resource('admin/bets', BetController::class); */
    
 });
 
 // Rutas Usuarios
     Route::group(['middleware' => ['auth']], function () {
-    Route::get('/quinielas', [BetsUsuarioController::class, 'index']);
-    /* Route::get('/apuestas', [BetsUsuarioController::class, 'bets'])->name('usuarios.bets.apuestas'); */
+    Route::get('/quinielas', [BetsUsuarioController::class, 'quinielas'])->name('usuarios.bets.quinielas');
+    
 
     Route::get('/quinielas/{quinielaId}/apuestas', [BetsUsuarioController::class, 'apuestas'])->name('usuarios.bets.apuestas');
     Route::get('/quinielas/{quinielaId}/apuestas/create', [BetsUsuarioController::class, 'create'])->name('usuarios.bets.create');
     Route::post('/quinielas/{quinielaId}/apuestas', [BetsUsuarioController::class, 'store'])->name('usuarios.bets.store');
 
-    
+    Route::get('/quinielas/{quinielaId}/bets/', [BetsUsuarioController::class, 'apuestaPorUsuario'])->name('usuarios.bets.apuestaporusuario');
 
     
     Route::get('/quinielas/{quinielaId}/puntos', [PointController::class, 'index'])->name('usuarios.bets.index');
     Route::get('/quinielas/{quinielaId}/calcular-puntos', [PointController::class, 'calcularPuntos'])->name('usuarios.bets.calcularPuntos');
     Route::get('/quinielas/{quinielaId}/totales', [PointController::class, 'totales'])->name('usuarios.bets.totales');
+    Route::get('/quinielas/{quinielaId}/totalfinal', [PointController::class, 'updateTotalFinal'])->name('usuarios.bets.updateTotalFinal');
     
 
 
-    /* Route::get('/puntos', [PointController::class, 'calcularGanador']);
-    Route::get('/puntos', [PointController::class, 'mostrarBetsConUsuariosOrdenadosPorPuntos']); */
+
     
 
 });
@@ -98,50 +99,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
 Route::get('/', function () {
     return view('welcome');
 });
-/* 
-//Ruta Quinielas
-Route::resource('quinielas', QuinielaController::class);
 
-
-
-Route::resource('quinielas', QuinielaController::class);
-Route::get('/quinielas/{quiniela}/bets/create', [PointController::class, 'calculatePoints'])->name('bets.create');
-
-
-
-
-
-
-Route::get('/quinielas/{quiniela}/bets/create', [PointController::class, 'calculatePoints'])->name('bets.create');
-Route::post('/quinielas/{quiniela}/bets/create', [BetController::class, 'store']);
-
-
-
-
- */
-
-
-
-// ruta puntos
-/* Route::get('/puntos', [PointController::class, 'ganador']); */
-/* Route::get('/points', [PointController::class, 'calcularPuntosPorQuiniela'])->name('points.index'); */
-
-
-/* Route::get('/points', [PointController::class, 'index'])->name('points.index');
-Route::get('/ganador', [PointController::class, 'ganador'])->name('points.ganador'); */
-
-/* Route::get('/quinielas/{quinielaId}/calculate-points', [PointController::class, 'calculatePointsByQuiniela']);
-Route::get('/points', [PointController::class, 'index'])->name('points.index'); */
-/* Route::get('/puntos', [PointController::class, 'compareBetsWithResults']);
-Route::get('/posiciones', [PointController::class, 'index'])->name('points.index'); */
-/* 
-Route::get('puntaje', [PointController::class, 'calculatePoints']); */
-
-/*  */
-
-/* Route::get('calcular-puntos/{gameId}', [PointController::class, 'calcularGanador']);
-Route::get('/points/{gameId}', [PointController::class, 'index'])->name('points.index');
- */
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

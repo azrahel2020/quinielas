@@ -1,0 +1,558 @@
+.contenido {
+    @include grid-area(contenido);
+    @include d-grid;
+    grid-template-rows: 50px 1fr 50px;
+    overflow: scroll;
+    background: $color-secundario;
+    
+    .breadcrum{
+        
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        
+        width: 100%;
+        
+        &__title{
+            display: grid;
+            padding-left: 10px;
+            align-items: center;
+            
+            h3{
+                font-size: 22px;
+                color: white;
+            }
+        }
+        &__button{
+            @include d-grid;
+        }
+        
+    
+    }
+    .container-fit{
+        @include d-grid;
+        grid-template-columns: repeat( auto-fit, minmax(160px, 2fr) );
+        padding: 0px 30px;
+        gap: 10px;
+        overflow: scroll;
+
+        //card equipos
+        .card-team{
+            @include d-grid;
+            position: relative;
+            grid-template-rows: 1fr 30px;
+            width: 160px;
+            height: 190px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 5px 5px 15px 5px #0000007a;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 10px;
+            gap: 10px;
+            
+            &__image{
+                width: 90%;
+                height: 100%;
+                
+            }
+            h4{
+                color: white;
+            }
+            
+            
+
+        }
+        //card quinielas
+        .card-quiniela{
+            @include d-grid;
+            position: relative;
+            grid-template-rows: 20px 100px 1fr 1fr;
+            width: 160px;
+            height: 200px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 5px 5px 15px 5px #0000007a;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 10px;
+            &__fecha{
+               @include d-grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5px;
+                
+                width: 100%;
+                font-size: 12px;
+                color: white
+            }
+            &__img{
+                @include d-grid;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                
+            }
+            &__nombre{
+                color: white;
+            }
+            &__btn{
+                @include d-grid;
+                border-radius: 50%;
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                color: black;
+                border-width: 2px;
+                border-style: solid;
+                border-color:  white;
+                cursor: pointer;
+                &--edit{
+                    bottom: 25px;
+                    left: 5px;
+                    background: yellow;
+                }
+                &--delete{
+                    bottom: 25px;
+                    right: 5px;
+                    background: red;
+                }
+                
+                
+            }
+            &__boton{
+                width: 100%;
+                background: $color-primario;
+                padding: 5px 30px;
+                border-radius: 5px;
+                color: white;
+            }
+        }
+        //card games
+        .card-games{
+            @include d-grid;
+            position: relative;
+            grid-template-rows: 20px 20px 70px 1fr 25px;
+            width: 160px;
+            height: 200px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 5px 5px 15px 5px #0000007a;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 5px 10px;
+            padding-bottom: 0px;
+            color: white;
+            &__label{
+                display: grid;
+                grid-template-columns: 1fr 30px 1fr;
+                height: 100%;
+                padding-left: 10px;
+                align-content: start;
+                justify-content: center;
+                
+            }
+            &__img{
+                @include d-grid;
+                grid-template-columns: 1fr 30px 1fr;
+                
+                img{
+                    width: 100%;
+                }
+            }
+            &__quiniela{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                align-items: end;
+                justify-content: center
+            }
+        }
+        .card-apuestas{
+            @include d-grid;
+            position: relative;
+            grid-template-columns: auto 30px 1fr 30px;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 5px 5px 15px 5px #0000007a;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 10px;
+            
+            color: white;
+            &__nombre{
+                display: grid;
+                place-items: center;
+                width: 100%;
+                height: 100%;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+        
+                background: red;
+            }
+            &__puntos{
+                display: grid;
+                width: 100%;
+                height: 100%;
+                place-items: center;
+                
+                
+                .point{
+                    display: grid;
+                    place-items: center;
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: green;
+                }
+            }
+            &__content{
+                display: grid;
+                width: 100%;
+        
+                grid-template-rows: 40px auto 1fr auto 40px;
+                
+                .title{
+                    display: grid;
+                    width: 100%;
+                    
+                    place-items: center;
+                    
+                }
+                .resultado{
+                    display: grid;
+                    
+                    grid-template-columns: 1fr 1fr 1fr;
+                    
+                    place-items: center;
+                    background: red;
+                    
+                    
+                   
+                }
+                .img{
+                    display: grid;
+                    place-items: center;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            
+            
+        }
+
+
+    }
+    .pagina{
+        @include d-grid;
+        width: 100%;
+        height: 100%;
+        color: white;
+        .btn-nav {
+            width: 30px;
+            height: 30px;
+            border: 1.5px solid white;
+            color: white;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .page-numbers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0px 20px;
+        }
+        .btn-page {
+            border: none;
+            width: 28px;
+            height: 28px;
+            font-size: 16px;
+            border-radius: 50%;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn-selected {
+            background-color: $color-primario;
+            color: #fff;
+        }
+        /* .pagination,
+        .page-numbers {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+        }
+        
+        .pagination {
+          margin-top: 128px;
+        }
+        
+        .btn-nav,
+        .btn-page {
+          border-radius: 50%;
+          background-color: #fff;
+          cursor: pointer;
+        }
+        
+        .btn-nav {
+          padding: 8px;
+        }
+        
+        .btn-nav {
+          width: 42px;
+          height: 42px;
+          border: 1.5px solid #087f5b;
+          color: #087f5b;
+        }
+        
+        .btn-nav:hover,
+        .btn-page:hover {
+          background-color: #087f5b;
+          color: #fff;
+        }
+        
+        .btn-page {
+          border: none;
+          width: 36px;
+          height: 36px;
+          font-size: 16px;
+        }
+        
+        .btn-selected {
+          background-color: #087f5b;
+          color: #fff;
+        } */
+        
+    }
+
+
+    //modal agregar
+    .modal{
+        top: 20vh;
+        
+        
+        .modal-content{
+            &--equipo{
+                position: relative;
+                display: grid;
+                grid-template-rows: 70px 170px 50px 70px;
+                place-items: center;
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 5px 5px 15px 5px #0000007a;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                &__title{
+                    @include d-grid;
+                    color: white;
+                }
+                &__img{
+                    display: grid;
+                    width: 200px;
+                    height: 150px;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                    
+                }
+                &__imagePreview{
+                    position: absolute;
+                    top: 60px;
+                    width: 200px;
+                    height: 180px;
+                } 
+                &__input{
+                    margin: 10px;
+                    font-size: 16px;
+                    text-align: center;
+                    border-radius: 10px;
+                }
+                &__upload{
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 60px;
+                    height: 60px;
+                    cursor: pointer;
+                    img{
+                        width: 100%;
+                    }
+                    input{
+                        display: none;
+                    }
+                }
+                
+            }
+            &--quiniela{
+                position: relative;
+                display: grid;
+                grid-template-rows: 50px 200px 70px 100px 50px;
+                place-items: center;
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 5px 5px 15px 5px #0000007a;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                
+                &__title{
+                   @include d-grid;
+                   font-weight: 500;
+                   
+                   color: white;
+                   
+                }
+                &__fechas{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 5%;
+                    
+                   
+                    /* Estilos para el label */
+                    .date-container label {
+                        font-weight: 500;
+                        color: white; /* Color del texto del label */
+                        display: block; /* Para que el label ocupe toda la línea */
+                        margin-bottom: 5px; /* Espacio entre el label y el input */
+                    }
+            
+                    /* Estilos para el input de fecha */
+                    .custom-date-input {
+                        width: 100%; /* Ancho del input ajustado al contenedor */
+                        height: 40px; /* Altura del input para mejor visualización */
+                        background: rgba(255, 255, 255, 0.2);
+                        box-shadow: 5px 5px 15px 5px #0000007a;
+                        backdrop-filter: blur(5px);
+                        border: 1px solid #ccc; /* Borde para que sea visible */
+                        border-radius: 5px; /* Bordes redondeados */
+                        padding: 10px; /* Espaciado interno */
+                        font-size: 16px; /* Tamaño de la fuente */
+                        
+                        color: black; /* Color del texto */
+                        outline: none; /* Sin borde de enfoque */
+                    }
+            
+                    /* Estilos para cuando el input está enfocado */
+                    .custom-date-input:focus {
+                        border-color: #007bff; /* Color del borde al enfocar */
+                        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+                    }
+                }
+                &__img{
+                    @include d-grid;
+                    width: 50%;
+                    height: 100%;
+                    
+                    
+                   
+                }
+                &__imagePreview{
+                    position: absolute;
+                    top: 50px;
+                    width: 250px;
+                    height: 200px;
+                } 
+                .select-container {
+                    width: 200px; /* Ancho del contenedor */
+                    margin: 20px; /* Margen para separar del resto del contenido */
+                }
+        
+                /* Estilos para el label */
+                .select-container label {
+                    font-weight: 500;
+                    color: white; /* Color del texto del label */
+                    display: block; /* Para que el label ocupe toda la línea */
+                    margin-bottom: 5px; /* Espacio entre el label y el select */
+                }
+        
+                /* Estilos para el select */
+                .custom-select {
+                    width: 100%; /* Ancho del select ajustado al contenedor */
+                    height: 40px; /* Altura del select */
+                    background: rgba(255, 255, 255, 0.2);
+                    box-shadow: 5px 5px 15px 5px #0000007a;
+                    backdrop-filter: blur(5px);
+                    border: 1px solid #ccc; /* Borde para que sea visible */
+                    border-radius: 5px; /* Bordes redondeados */
+                    padding: 10px; /* Espaciado interno */
+                    font-size: 16px; /* Tamaño de la fuente */
+                    color: black; /* Color del texto */
+                    outline: none; /* Sin borde de enfoque */
+                    appearance: none; /* Eliminamos el estilo por defecto del select */
+                    -webkit-appearance: none; /* Eliminamos el estilo por defecto del select en WebKit */
+                    -moz-appearance: none; /* Eliminamos el estilo por defecto del select en Mozilla */
+                    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23000" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>'); /* Icono de flecha */
+                    background-repeat: no-repeat;
+                    background-position: right 10px center; /* Posición del icono de flecha */
+                    background-size: 12px; /* Tamaño del icono de flecha */
+                }
+        
+                /* Estilos para cuando el select está enfocado */
+                .custom-select:focus {
+                    border-color: #007bff; /* Color del borde al enfocar */
+                    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+                }
+                &__upload{
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 60px;
+                    height: 60px;
+                    cursor: pointer;
+                    img{
+                        width: 100%;
+                    }
+                    input{
+                        display: none;
+                    }
+                }
+
+
+                &__close{
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background: red;
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        
+           
+        }
+        
+    }
+    
+     /**** Media query ****/
+
+    //Vista Mobile
+    @include movil{
+        
+        
+    }
+    //Vista tablet
+    @include tablet{
+        
+    }
+   
+    //Vista PC
+    @include pc{
+        
+
+        
+    }
+    //Vista TV Large
+
+    @include pc{
+
+        
+    }
+}

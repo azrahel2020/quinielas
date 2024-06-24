@@ -110,30 +110,71 @@ class TeamSeeder extends Seeder
             'image' => 'costarica.png',
 
         ]);
-
         Team::create([
 
-            'name' => 'Real Madrid',
-            'image' => 'realmadrid.png',
+            'name' => 'Belgica',
+            'image' => 'belgica.png',
 
         ]);
         Team::create([
 
-            'name' => 'Barcelona',
-            'image' => 'barcelona.png',
+            'name' => 'Rumania',
+            'image' => 'rumania.png',
 
         ]);
         Team::create([
 
-            'name' => 'Valencia',
-            'image' => 'valencia.png',
+            'name' => 'Suiza',
+            'image' => 'suiza.png',
 
         ]);
         Team::create([
 
-            'name' => 'Getafe',
-            'image' => 'getafe.png',
+            'name' => 'Alemania',
+            'image' => 'alemania.png',
 
         ]);
+        Team::create([
+
+            'name' => 'Escocia',
+            'image' => 'escocia.png',
+
+        ]);
+        Team::create([
+
+            'name' => 'Hungria',
+            'image' => 'hungria.png',
+
+        ]);
+
+        Team::create([
+
+            'name' => 'Albania',
+            'image' => 'albania.png',
+
+        ]);
+        Team::create([
+
+            'name' => 'España',
+            'image' => 'españa.png',
+
+        ]);
+
+        Team::create([
+
+            'name' => 'Croacia',
+            'image' => 'croacia.png',
+
+        ]);
+        Team::create([
+
+            'name' => 'Italia',
+            'image' => 'italia.png',
+
+        ]);
+        
+        
+
+        
     }
 }

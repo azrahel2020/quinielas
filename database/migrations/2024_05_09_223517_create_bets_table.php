@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('pointsHome')->default(0);
             $table->integer('pointsAway')->default(0);
             $table->integer('pointsAltaBaja')->default(0);
+            $table->integer('total_final')->default(0);
        
             
             $table->integer('total')->default(0);

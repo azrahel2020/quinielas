@@ -1,5 +1,7 @@
 <div class="container">
+   
     <h1>Games and Bets for Quiniela {{ $quinielaId }}</h1>
+    
     @foreach($games as $game)
         <h2>Game ID: {{ $game->id }}</h2>
         <p>Home Team: {{ $game->homeTeam->name ?? 'N/A' }}</p>
